@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Anakcontroller;
 use App\Http\Controllers\Authcontroller;
 use App\Http\Controllers\Categorycontroller;
-use App\Http\Controllers\DapurController;
+// use App\Http\Controllers\DapurController;
 use App\Http\Controllers\Menucontroller;
 use App\Http\Controllers\Walicontroller;
 
@@ -28,8 +28,8 @@ Route::post('/user/login',[Walicontroller:: class, 'login']);
 
 
 // API Login Auth
-Route::post('/auth/register',[Authcontroller:: class, 'register']);
-Route::post('/auth/login',[Authcontroller:: class, 'login']);
+Route::post('/register',[Authcontroller:: class, 'register']);
+Route::post('/login',[Authcontroller:: class, 'login']);
 
 // API Menu
 Route::get('/menu', [MenuController::class, 'index']);
@@ -53,14 +53,7 @@ Route::post('/anak/update{id}', [Anakcontroller::class, 'update']);
 Route::post('/anak/hapus{id}', [Anakcontroller::class, 'delete']);
 
 
-// API Dapur
-Route::post('/dapur/register', [DapurController::class, 'register']);
-Route::post('/dapur/login', [DapurController::class, 'login']);
-Route::get('/dapur', [DapurController::class, 'index']);
-Route::get('dapur/{id}', [DapurController::class, 'show']);
-Route::post('dapur/create', [DapurController::class, 'create']);
-Route::post('/dapur/update{id}', [DapurController::class, 'update']);
-Route::post('/dapur/hapus{id}', [DapurController::class, 'delete']);
+
 
 // API Order
 Route::apiResource('order', Ordercontroller::class);

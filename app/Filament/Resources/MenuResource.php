@@ -50,7 +50,8 @@ class MenuResource extends Resource
                     ->schema([
                         TextInput::make('nama_menu')->required(),
                         TextInput::make('deskripsi')->required(),
-                        FileUpload::make('gambar')->image(),
+                        TextInput::make('gambar')->required(),
+                        // FileUpload::make('gambar')->image(),
                         TextInput::make('harga'),
                         DatePicker::make('tanggal'),
                         Select::make('category_id')->options(Category::all()->pluck('name', 'id'))
